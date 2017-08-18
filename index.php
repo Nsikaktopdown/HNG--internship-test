@@ -30,7 +30,7 @@ if ($conn->query($sql) === TRUE) {
 function insertData(){
     $sql = "INSERT INTO MyGuests (firstname, lastname, email)
     VALUES ('John', 'Doe', 'john@example.com');";
-    $sql .= "INSERT INTO MyGuests (firstname, lastname, email)
+    sql .= "INSERT INTO MyGuests (firstname, lastname, email)
     VALUES ('Mary', 'Moe', 'mary@example.com');";
     $sql .= "INSERT INTO MyGuests (firstname, lastname, email)
     VALUES ('Julie', 'Dooley', 'julie@example.com')";
@@ -42,8 +42,8 @@ if ($conn->multi_query($sql) === TRUE) {
 }
 
 }
-}
 
+function queryData(){
 $sql = "SELECT id, firstname, lastname FROM MyGuests";
 $result = $conn->query($sql);
 
@@ -55,5 +55,7 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
+}
+
 $conn->close();
 ?>
